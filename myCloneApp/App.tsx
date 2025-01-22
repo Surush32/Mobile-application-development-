@@ -104,8 +104,8 @@ export default function App() {
       </View>
 
       <View style={styles.navBar}>
-        <Icon name="home-o" size={30} color="black" />
-        <Icon name="search-o" size={30} color="black" />
+        <Icon name="home" size={30} color="black" />
+        <Icon name="search" size={30} color="black" />
         <Icon name="play-circle-o" size={30} color="black" />
         <Icon name="shopping-bag" size={30} color="black" />
         <Icon name="user-o" size={30} color="black" />
