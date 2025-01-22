@@ -42,6 +42,40 @@ export default function EditScreenInfo({ path }: { path: string }) {
           </Text>
         </ExternalLink>
       </View>
+      <View>
+        <Text style = {styles.userName}>
+          frenchie_fry39
+        </Text>
+        <Text>
+          Fresh shot on a sunny day!
+        </Text>
+      </View>
+      <View>
+        <Text style = {styles.sysMessageLarge}>
+          View all 12 comments
+        </Text>
+      </View>
+      <View>
+        <Text style={styles.userName}>
+          lil_wyatt838
+        </Text>
+        <Text>
+          Awesome tones
+        </Text>
+      </View>
+      <View>
+        <Text style={styles.userName}>
+          pia.in.a.pod
+        </Text>
+        <Text>
+          Gorg. Love it!
+        </Text>
+      </View>
+      <View>
+        <Text style={styles.sysMessage}>
+          1 day ago
+        </Text>
+      </View>
     </View>
   );
 }
@@ -74,4 +108,22 @@ const styles = StyleSheet.create({
   helpLinkText: {
     textAlign: 'center',
   },
+
+  sysMessage: {
+    color: '#ded4d4',
+    fontSize: 10,
+  },
+
+  sysMessageLarge: {
+    color: '#ded4d4',
+    fontSize: 13,
+  },
+
+  userName: {
+    fontWeight: 'bold',
+  },
+
+  userMessage: {
+
+  }
 });
