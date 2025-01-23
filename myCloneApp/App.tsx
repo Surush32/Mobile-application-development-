@@ -6,8 +6,8 @@ import { ReloadInstructions } from "react-native/Libraries/NewAppScreen";
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.topBar}>
-        <Text style={styles.timeText}>5:26 </Text>
+      <View style={styles.topPart}>
+        <Text style={styles.PhoneTime}>5:26 </Text>
         <View style={styles.icons}>
           <Icon name="signal" size={23} color="black" />
           <Icon name="wifi" size={23} color="black" />
@@ -15,7 +15,7 @@ export default function App() {
         </View>
       </View>
 
-      <View style={styles.header}>
+      <View style={styles.Tittle}>
         <Icon name="angle-left" size={23} color="black" />
         <Text style={styles.headerText}>OOTD_EVERYDAY</Text>
       </View>
@@ -89,7 +89,7 @@ export default function App() {
         </View>
         <Text style={styles.commentText}>
           <Text style={styles.commentAuthor}>frenchie_fry39 </Text>
-          Fresh shot on a sunny day! <Icon name="sun-o" size={14} color="red" />
+          Fresh shot on a sunny day! <Icon name="sun-o" size={14} color="yellow" />
         </Text>
         <Text style={styles.viewAllCommentsText}>View all 12 comments</Text>
         <Text style={styles.commentText}>
@@ -119,13 +119,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  topBar: {
+  topPart: {
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 10,
     marginTop: 20,
   },
-  timeText: {
+  PhoneTime: {
     fontSize: 20,
     fontWeight: "bold",
     marginTop: 10,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: 10,
   },
-  header: {
+  Tittle: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
