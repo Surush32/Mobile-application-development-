@@ -1,9 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Alert, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { ReloadInstructions } from "react-native/Libraries/NewAppScreen";
 
 export default function App() {
+
+  const showAlert = () => {
+    Alert.alert(
+     
+      "Alert button pressed", 
+     
+    );
+  };
+
+
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -100,13 +110,19 @@ export default function App() {
           Awesome tones
         </Text>
         <Text style={styles.commentText}>
-          <Text style={styles.commentAuthor}>pai.in.a.pod </Text>
+          <Text style={styles.commentAuthor}>pia.in.a.pod </Text>
           Gorg. Love it! <Icon name="heart" size={14} color="red" />
         </Text>
         <Text style={styles.timeAgoText}>1 day ago</Text>
       </View>
 
       <View style={styles.horizontalLine2}></View>
+
+      <View>
+        <TouchableOpacity onPress={showAlert}>
+          <Text>Alert</Text>
+        </TouchableOpacity>
+      </View>
 
       <View style={styles.navBar}>
         <Icon name="home" size={30} color="black" />
