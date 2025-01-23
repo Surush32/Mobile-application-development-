@@ -119,8 +119,8 @@ export default function App() {
       <View style={styles.horizontalLine2}></View>
 
       <View>
-        <TouchableOpacity onPress={showAlert}>
-          <Text>Alert</Text>
+        <TouchableOpacity style = {styles.alertbutton} onPress={showAlert}>
+          <Text style = {styles.alerttext}>Alert</Text>
         </TouchableOpacity>
       </View>
 
@@ -284,5 +284,16 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: "#fff",
   },
+
+  alertbutton: {
+    marginTop: 6,
+    width: 50,
+  },
+
+  alerttext: {
+    color: "gray",
+    fontWeight: "bold",
+    fontSize: 20
+  }
 });
 
