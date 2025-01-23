@@ -1,17 +1,27 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Alert, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { ReloadInstructions } from "react-native/Libraries/NewAppScreen";
 
 export default function App() {
+
+  const showAlert = () => {
+    Alert.alert(
+     
+      "Alert button pressed", 
+     
+    );
+  };
+
+
   return (
     <View style={styles.container}>
       <View style={styles.topPart}>
         <Text style={styles.PhoneTime}>5:26 </Text>
         <View style={styles.icons}>
-          <Icon name="signal" size={23} color="black" />
-          <Icon name="wifi" size={23} color="black" />
-          <Icon name="battery-full" size={23} color="black" />
+          <Icon name="signal" size={18} color="black" />
+          <Icon name="wifi" size={18} color="black" />
+          <Icon name="battery-full" size={18} color="black" />
         </View>
       </View>
 
@@ -19,7 +29,10 @@ export default function App() {
         <Icon name="angle-left" size={23} color="black" />
         <Text style={styles.headerText}>OOTD_EVERYDAY</Text>
       </View>
-      <Text style={styles.subHeaderText}>Post</Text>
+      <Text style={styles.subHeaderText}>Posts</Text>
+
+      <View style={styles.horizontalLine2}></View>
+
 
       <View style={styles.profileContainer}>
         <Image
@@ -84,7 +97,7 @@ export default function App() {
             style={styles.reactionImage}
           />
           <Text style={styles.reactionText}>
-            Liked by paisley, print.48 and 7 others
+            Liked by <Text style={{fontWeight: "bold"}}>paisley.print.48</Text> and <Text style={{fontWeight: "bold"}}>7 others</Text>
           </Text>
         </View>
         <Text style={styles.commentText}>
@@ -94,13 +107,21 @@ export default function App() {
         <Text style={styles.viewAllCommentsText}>View all 12 comments</Text>
         <Text style={styles.commentText}>
           <Text style={styles.commentAuthor}>lil_wyatt838 </Text>
-          Awsoam tones
+          Awesome tones
         </Text>
         <Text style={styles.commentText}>
-          <Text style={styles.commentAuthor}>pai.in.a.pod </Text>
-          Gorg. love it! <Icon name="heart" size={14} color="red" />
+          <Text style={styles.commentAuthor}>pia.in.a.pod </Text>
+          Gorg. Love it! <Icon name="heart" size={14} color="red" />
         </Text>
         <Text style={styles.timeAgoText}>1 day ago</Text>
+      </View>
+
+      <View style={styles.horizontalLine2}></View>
+
+      <View>
+        <TouchableOpacity style = {styles.alertbutton} onPress={showAlert}>
+          <Text style = {styles.alerttext}>Alert</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.navBar}>
@@ -113,6 +134,8 @@ export default function App() {
     </View>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -128,7 +151,8 @@ const styles = StyleSheet.create({
   PhoneTime: {
     fontSize: 20,
     fontWeight: "bold",
-    marginTop: 10,
+    marginTop: 3,
+    marginLeft: 18,
   },
   icons: {
     flexDirection: "row",
@@ -140,11 +164,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 20,
+    marginTop: 15,
     paddingHorizontal: 10,
   },
   headerText: {
-    fontSize: 20,
+    fontSize: 13,
     fontWeight: "bold",
     marginLeft: 10,
     textAlign: "center",
@@ -152,22 +176,22 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   subHeaderText: {
-    fontSize: 30,
+    fontSize: 18,
     color: "black",
     textAlign: "center",
-    marginTop: 5,
+    marginTop: 1,
     fontWeight: "bold",
   },
   profileContainer: {
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 10,
-    marginTop: 20,
+    marginTop: 5,
   },
   profileImage: {
     width: 55,
     height: 55,
-    borderRadius: 25,
+    borderRadius: 40,
   },
   profileTextContainer: {
     marginLeft: 10,
@@ -187,7 +211,7 @@ const styles = StyleSheet.create({
   postImage: {
     width: "100%",
     height: "50%",
-    marginTop: 22,
+    marginTop: 8,
   },
   actionIcons: {
     flexDirection: "row",
@@ -237,15 +261,32 @@ const styles = StyleSheet.create({
     color: "gray",
   },
 
+  horizontalLine2: {
+    borderColor: '#778899', 
+    borderBottomWidth: 0.5,
+    marginVertical: 5, 
+  },
+
   navBar: {
     flexDirection: "row",
     justifyContent: "space-around",
     paddingVertical: 7,
-    borderTopWidth: 0,
     borderColor: "#ddd",
     position: "absolute",
-    bottom: 0,
+    bottom: 9,
     width: "100%",
     backgroundColor: "#fff",
   },
+
+  alertbutton: {
+    marginTop: 6,
+    width: 50,
+  },
+
+  alerttext: {
+    color: "gray",
+    fontWeight: "bold",
+    fontSize: 20
+  }
 });
+
