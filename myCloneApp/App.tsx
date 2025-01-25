@@ -1,19 +1,21 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Alert, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Alert,
+  TouchableOpacity,
+  Platform,
+} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { ReloadInstructions } from "react-native/Libraries/NewAppScreen";
 
 export default function App() {
-
+  
   const showAlert = () => {
-    Alert.alert(
-
-     "alert",
-      "Alert button pressed", 
-     
-    );
+    Alert.alert("alert", "Alert button pressed");
   };
-
 
   return (
     <View style={styles.container}>
@@ -33,7 +35,6 @@ export default function App() {
       <Text style={styles.subHeaderText}>Posts</Text>
 
       <View style={styles.horizontalLine2}></View>
-
 
       <View style={styles.profileContainer}>
         <Image
@@ -98,12 +99,15 @@ export default function App() {
             style={styles.reactionImage}
           />
           <Text style={styles.reactionText}>
-            Liked by <Text style={{fontWeight: "bold"}}>paisley.print.48</Text> and <Text style={{fontWeight: "bold"}}>7 others</Text>
+            Liked by{" "}
+            <Text style={{ fontWeight: "bold" }}>paisley.print.48</Text> and{" "}
+            <Text style={{ fontWeight: "bold" }}>7 others</Text>
           </Text>
         </View>
         <Text style={styles.commentText}>
           <Text style={styles.commentAuthor}>frenchie_fry39 </Text>
-          Fresh shot on a sunny day! <Icon name="sun-o" size={14} color="yellow" />
+          Fresh shot on a sunny day!{" "}
+          <Icon name="sun-o" size={14} color="yellow" />
         </Text>
         <Text style={styles.viewAllCommentsText}>View all 12 comments</Text>
         <Text style={styles.commentText}>
@@ -114,16 +118,14 @@ export default function App() {
           <Text style={styles.commentAuthor}>pia.in.a.pod </Text>
           Gorg. Love it! <Icon name="heart" size={14} color="red" />
         </Text>
-        <Text style={styles.timeAgoText}>1 day ago</Text>
       </View>
 
-      <View style={styles.horizontalLine2}></View>
-
-      <View>
-        <TouchableOpacity style = {styles.alertbutton} onPress={showAlert}>
-          <Text style = {styles.alerttext}>Alert</Text>
-        </TouchableOpacity>
-      </View>
+      <View style={styles.timeAndAlertContainer}>
+          <Text style={styles.timeAgoText}>1 day ago</Text>
+          <TouchableOpacity style={styles.alertbutton} onPress={showAlert}>
+            <Text style={styles.alerttext}>Alert</Text>
+          </TouchableOpacity>
+        </View>
 
       <View style={styles.navBar}>
         <Icon name="home" size={30} color="black" />
@@ -136,12 +138,11 @@ export default function App() {
   );
 }
 
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    paddingBottom: 60,
   },
   topPart: {
     flexDirection: "row",
@@ -263,31 +264,45 @@ const styles = StyleSheet.create({
   },
 
   horizontalLine2: {
-    borderColor: '#778899', 
+    borderColor: "#778899",
     borderBottomWidth: 0.5,
-    marginVertical: 5, 
+    marginVertical: 5,
   },
 
   navBar: {
     flexDirection: "row",
     justifyContent: "space-around",
-    paddingVertical: 7,
+    paddingVertical: 9,
     borderColor: "#ddd",
+    borderTopWidth: 2,
     position: "absolute",
-    bottom: 9,
+    bottom: 1,
     width: "100%",
     backgroundColor: "#fff",
   },
 
+  timeAndAlertContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 10,
+    marginTop: 5,
+  },
   alertbutton: {
-    marginTop: 6,
-    width: 50,
+    backgroundColor: "#007BFF",
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+  },
+  
+  alerttext: {
+    color: "#fff",
+    fontSize: 17,
   },
 
-  alerttext: {
-    color: "gray",
-    fontWeight: "bold",
-    fontSize: 20
+  content: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 10,
+    marginBottom: Platform.OS === "ios" ? 20 : 10,
   }
 });
-
