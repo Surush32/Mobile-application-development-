@@ -7,7 +7,8 @@ export default function App() {
 
   const showAlert = () => {
     Alert.alert(
-     
+
+     "alert",
       "Alert button pressed", 
      
     );
