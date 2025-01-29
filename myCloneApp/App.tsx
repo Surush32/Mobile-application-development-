@@ -299,10 +299,4 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
 
-  content: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    marginBottom: Platform.OS === "ios" ? 20 : 10,
-  }
 });
